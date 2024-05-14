@@ -2,6 +2,7 @@ name,src,ref,server,version,luaversion,maintainers
 alt-getopt,,,,,,arobyn
 bit32,,,,5.3.0-1,5.1,lblasc
 argparse,,,,,,
+barcodes.sile,,,,,,cdro
 basexx,,,,,,
 binaryheap,,,,,,vcunat
 busted,,,,,,
@@ -10,11 +11,14 @@ cldr,,,,,,alerque
 compat53,,,,,,vcunat
 commons.nvim,,,,,,mrcjkb
 cosmo,,,,,,
+couyards.sile,,,,,,cdro
 coxpcall,,,,1.17.0-1,,
 cqueues,,,,,,vcunat
 cyan,,,,,,
 digestif,https://github.com/astoff/digestif.git,,,,5.3,
 dkjson,,,,,,
+embedders.sile,,,,,,cdro
+fancytoc.sile,,,,,,cdro
 fennel,,,,,,misterio77
 fidget.nvim,,,,,,mrcjkb
 fifo,,,,,,
@@ -28,6 +32,7 @@ http,,,,0.3-0,,vcunat
 image.nvim,,,,,,teto
 inspect,,,,,,
 jsregexp,,,,,,
+labelrefs.sile,,,,,,cdro
 ldbus,,,http://luarocks.org/dev,,,
 ldoc,,,,,,
 lgi,,,,,,
@@ -98,6 +103,7 @@ lush.nvim,https://github.com/rktjmp/lush.nvim,,,,,teto
 lyaml,,,,,,lblasc
 magick,,,,,5.1,donovanglover
 markdown,,,,,,
+markdown.sile,,,,,,cdro
 mediator_lua,,,,,,
 middleclass,,,,,,
 mimetypes,,,,,,
@@ -110,8 +116,13 @@ nvim-cmp,https://github.com/hrsh7th/nvim-cmp,,,,,
 nvim-nio,,,,,,mrcjkb
 pathlib.nvim,,,,,,
 penlight,https://github.com/lunarmodules/Penlight.git,,,,,alerque
+piecharts.sile,,,,,,cdro
 plenary.nvim,https://github.com/nvim-lua/plenary.nvim.git,,,,5.1,
+printoptions.sile,,,,,,cdro
+ptable.sile,,,,,,cdro
+qrcode.sile,,,,,,cdro
 rapidjson,https://github.com/xpol/lua-rapidjson.git,,,,,
+resilient.sile,,,,,,cdro
 rocks.nvim,,,,,5.1,teto mrcjkb
 rest.nvim,,,,,5.1,teto
 rocks.nvim,,,,,,mrcjkb
@@ -121,6 +132,7 @@ rocks-dev.nvim,,,,,,mrcjkb
 rustaceanvim,,,,,,mrcjkb
 say,https://github.com/Olivine-Labs/say.git,,,,,
 serpent,,,,,,lockejan
+silex.sile,,,,,,cdro
 sqlite,,,,,,
 std._debug,https://github.com/lua-stdlib/_debug.git,,,,,
 std.normalize,,,,,,
@@ -128,6 +140,7 @@ stdlib,,,,41.2.2,,vyp
 teal-language-server,,,http://luarocks.org/dev,,,
 telescope.nvim,,,,,5.1,
 telescope-manix,,,,,,
+textsubsuper.sile,,,,,,cdro
 tiktoken_core,,,,,,natsukium
 tl,,,,,,mephistophiles
 toml,,,,,,mrcjkb

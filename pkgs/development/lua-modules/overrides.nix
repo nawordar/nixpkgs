@@ -651,7 +651,6 @@ in
     };
   })) {};
 
-
   sqlite = prev.sqlite.overrideAttrs (drv: {
 
     doCheck = true;

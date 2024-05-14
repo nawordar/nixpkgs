@@ -62,6 +62,39 @@ buildLuarocksPackage {
   };
 }) {};
 
+barcodes-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "barcodes.sile";
+  version = "1.1.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/barcodes.sile-1.1.0-1.rockspec";
+    sha256 = "1dsm5fn5457m7fk6ivqc6sv66g28gyalfw9jbsw3la6m2z3lwf2n";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/barcodes.sile.git",
+  "rev": "dc00b3fc3a107cc03b59af927cef85f0220be9b2",
+  "date": "2024-01-14T17:40:56+01:00",
+  "path": "/nix/store/9lg4kb0idgy9hbiv43q2b96rdynyy4wd-barcodes.sile",
+  "sha256": "1mqjka7sqqbb13vl130y842l71yg29wix94zc0bj4yanndwpyn91",
+  "hash": "sha256-IVl/ebNWeSIXYJ+kHnkSz4dDBUEejED3CGthrI+aEtc=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/barcodes.sile";
+    description = "Barcodes package for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
 basexx = callPackage({ buildLuarocksPackage, fetchurl, lua, luaOlder }:
 buildLuarocksPackage {
   pname = "basexx";
@@ -320,6 +353,39 @@ buildLuarocksPackage {
   };
 }) {};
 
+couyards-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "couyards.sile";
+  version = "1.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/couyards.sile-1.0.0-1.rockspec";
+    sha256 = "16i7v9ya7bjbavh186yw9s892ikfhblvi92nmxwciys9hj8mjdrv";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/couyards.sile.git",
+  "rev": "c98fb33a7696c0657dc6b57bbb3a0954c1ac694e",
+  "date": "2023-08-05T19:06:49+02:00",
+  "path": "/nix/store/wj1p1lb4s5zrxq49pm8i9x55vfhspmwd-couyards.sile",
+  "sha256": "1cx3306zcksjnlrn0ldfq6i3iyks1jlmyh8fnm76grrzsfqp511p",
+  "hash": "sha256-N4RysdM/52dOtQ5BX6kMevo4osGuUWAztVJP9g0Yo7M=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/couyards.sile";
+    description = "Pendant ornaments (culs-de-lampe) for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
 coxpcall = callPackage({ buildLuarocksPackage, fetchgit, fetchurl }:
 buildLuarocksPackage {
   pname = "coxpcall";
@@ -454,6 +520,72 @@ buildLuarocksPackage {
     homepage = "http://dkolf.de/dkjson-lua/";
     description = "David Kolf's JSON module for Lua";
     license.fullName = "MIT/X11";
+  };
+}) {};
+
+embedders-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "embedders.sile";
+  version = "0.1.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/embedders.sile-0.1.0-1.rockspec";
+    sha256 = "0b46nd2s01pihvz2ickilva2h93jnf3hy359lh3iz486q51i0k2j";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/embedders.sile.git",
+  "rev": "744407163524dc6acc4bda43473b81e73b4af464",
+  "date": "2023-08-06T00:34:42+02:00",
+  "path": "/nix/store/kxgdxzc0hjscjj47ib3ps65m9hl8mf8z-embedders.sile",
+  "sha256": "1rzla9rc6jx2izby0nyymi0dkprpip900gyrfap69056zirl97y7",
+  "hash": "sha256-x59Ec/ymgGSuctk/ANKNN9/ZQKzeW+DXj6JLw3JS9Oc=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/embedders.sile";
+    description = "Graphviz, Lilypond (etc.) support for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
+fancytoc-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder, ptable-sile }:
+buildLuarocksPackage {
+  pname = "fancytoc.sile";
+  version = "1.0.1-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/fancytoc.sile-1.0.1-1.rockspec";
+    sha256 = "1gqcmy54p8an83kdiksmr23c8aanw7cq7baanc83jbxskbl6qnpv";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/fancytoc.sile.git",
+  "rev": "2e8b074200c58a79d0725da4ed05d57f6e5efbe4",
+  "date": "2023-08-14T15:27:30+02:00",
+  "path": "/nix/store/q52j1ws5l8gcksxb544nfw23q33gfm0r-fancytoc.sile",
+  "sha256": "0qxzdmw0b585nay9v8azq99y3pb6ndy9na4mwqyzfcp6lykdvqr5",
+  "hash": "sha256-JePdpqfmMvc95pUom3yzZt3hU8JfoZ28sgWVBXhtv2M=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ptable-sile ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/fancytoc.sile";
+    description = "Some fancy table of contents for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
   };
 }) {};
 
@@ -783,6 +915,39 @@ buildLuarocksPackage {
   meta = {
     homepage = "https://github.com/kmarius/jsregexp";
     description = "javascript (ECMA19) regular expressions for lua";
+    license.fullName = "MIT";
+  };
+}) {};
+
+labelrefs-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "labelrefs.sile";
+  version = "0.1.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/labelrefs.sile-0.1.0-1.rockspec";
+    sha256 = "0f9klvpblaaarq6gn7yzy20gg01jvldqbrh1lcix38gf03z9258j";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/labelrefs.sile.git",
+  "rev": "f3b956a61bfa101191674854fb1ba1ea052e8c5e",
+  "date": "2023-08-10T11:08:38+02:00",
+  "path": "/nix/store/zvpx2xa0z969q03yrc81xy3bqy65zf4m-labelrefs.sile",
+  "sha256": "08rj5m8nq3fniafdh5wq63al7m1s1lm73xrmipwkqi9in5carlns",
+  "hash": "sha256-2tKsWLExRTz5jTX3cSoNOtRD1TCYF9icitYNbFEtMiM=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/labelrefs.sile";
+    description = "Cross-referencing package for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
     license.fullName = "MIT";
   };
 }) {};
@@ -2809,6 +2974,39 @@ buildLuarocksPackage {
   };
 }) {};
 
+markdown-sile = callPackage({ buildLuarocksPackage, embedders-sile, fetchgit, fetchurl, labelrefs-sile, lua, luaOlder, ptable-sile, silex-sile, smartquotes-sile, textsubsuper-sile }:
+buildLuarocksPackage {
+  pname = "markdown.sile";
+  version = "2.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/markdown.sile-2.0.0-1.rockspec";
+    sha256 = "1bj0ccrlb7padp9gz4x4cdr74fxzm1nd5g9y8q6xl1p86vyj98w1";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/markdown.sile.git",
+  "rev": "401c712544f0cdc0048b8171a9ff23de2d8a0ae7",
+  "date": "2024-03-16T19:03:15+01:00",
+  "path": "/nix/store/x5yh5cira9q3jm2l0dnn3wnxkprrn520-markdown.sile",
+  "sha256": "1ginw88fjr8gz18nk2npvfpjjsndvbfnmjxxvfinpq2s2jvk06z9",
+  "hash": "sha256-6RswtxRa4Guj273Lat3azWopr9vXimlR+A9l6RDiNr4=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ embedders-sile labelrefs-sile lua ptable-sile silex-sile smartquotes-sile textsubsuper-sile ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/markdown.sile";
+    description = "Native Markdown support for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
 mediator_lua = callPackage({ buildLuarocksPackage, fetchurl, lua, luaOlder }:
 buildLuarocksPackage {
   pname = "mediator_lua";
@@ -3114,6 +3312,39 @@ buildLuarocksPackage {
   };
 }) {};
 
+piecharts-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "piecharts.sile";
+  version = "0.2.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/piecharts.sile-0.2.0-1.rockspec";
+    sha256 = "06hjn1z9066h1yk3lsvz6f4nmijp7gzmg5r3qw8ch7khabz4nkng";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/piecharts.sile.git",
+  "rev": "53bb0a9849dd32861d3f46ca3ba86b826354670c",
+  "date": "2024-02-06T23:07:12+01:00",
+  "path": "/nix/store/wnsaa5c8jdjrrjhaqs7bk6k8ji1varrs-piecharts.sile",
+  "sha256": "049zp05x1zbrnfndbjfm6gvgkidvwzdkkhs5lrgls3z4ab2lx5wl",
+  "hash": "sha256-lJdOxVLkD01fpkXDOdvnu8X59jPVydWss3n90Au4PxE=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/piecharts.sile";
+    description = "Pie charts for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
 plenary-nvim = callPackage({ buildLuarocksPackage, fetchgit, lua, luaAtLeast, luaOlder, luassert }:
 buildLuarocksPackage {
   pname = "plenary.nvim";
@@ -3143,6 +3374,105 @@ buildLuarocksPackage {
   };
 }) {};
 
+printoptions-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "printoptions.sile";
+  version = "1.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/printoptions.sile-1.0.0-1.rockspec";
+    sha256 = "0ps0j6sdn2alkszipxpfhxpaji01hq0xrm6drz7p62m38n33sx2d";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/printoptions.sile.git",
+  "rev": "4ac46acf4b9a5f2ee6f17dba0febf2c8fd5ea822",
+  "date": "2023-08-05T19:25:28+02:00",
+  "path": "/nix/store/mhgkycy4m1gyknid88h6ybmc39jf82np-printoptions.sile",
+  "sha256": "1ifaqwc1g3isk4wb9s6x2n7fwh5jsklas9mnkppj8yd3aphdcxzf",
+  "hash": "sha256-7nfW4FWjeSTvnbYmrejUskDujhXd6LQ4mTqOFxjHysU=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/printoptions.sile";
+    description = "Image tools for professional printers with the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
+ptable-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "ptable.sile";
+  version = "3.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/ptable.sile-3.0.0-1.rockspec";
+    sha256 = "1l5vly2r92cw99akqhramkiprr8x42f5nsl6s2bbljbgsrc76z9z";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/ptable.sile.git",
+  "rev": "c8e11fa5831e4e897aab3984b479adc8f432cc63",
+  "date": "2024-03-05T20:19:54+01:00",
+  "path": "/nix/store/vavds08l67njvlz71h215qa5a9h2i6gq-ptable.sile",
+  "sha256": "0qv66rh9k0mw30dml2xiy1fqrmsnyxrbranxdrmpg57a3dhb0xh1",
+  "hash": "sha256-AXawYBvqlHdrbt2qvHL3VteMXfCxC1obGLyCmWA2ZmM=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/ptable.sile";
+    description = "Paragraph boxes, framed boxes and table packages for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
+qrcode-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "qrcode.sile";
+  version = "1.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/qrcode.sile-1.0.0-1.rockspec";
+    sha256 = "0fgxjvwzrhx6i8hh08r43fgkxja5qrmzl5v85dgar6fd6ifiqc4m";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/qrcode.sile.git",
+  "rev": "e5f4314d8d8ea291b56cbab05a404833e98d0a80",
+  "date": "2023-08-05T18:36:48+02:00",
+  "path": "/nix/store/yf23jzpkdwh50ypnl2d5hcacal4zwm20-qrcode.sile",
+  "sha256": "0gnlx4d4hbpbivb9arqh60iz1nqfhd8bdw2c5wffcjdpb2iy24vb",
+  "hash": "sha256-axPho1i3SeYcL0zwtlCDDtvwIzAQZ5XWjusuSBrp1D4=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/qrcode.sile";
+    description = "QR code package for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "BSD 3-clause";
+  };
+}) {};
+
 rapidjson = callPackage({ buildLuarocksPackage, fetchgit, lua, luaOlder }:
 buildLuarocksPackage {
   pname = "rapidjson";
@@ -3168,6 +3498,39 @@ buildLuarocksPackage {
   meta = {
     homepage = "https://github.com/xpol/lua-rapidjson";
     description = "Json module based on the very fast RapidJSON.";
+    license.fullName = "MIT";
+  };
+}) {};
+
+resilient-sile = callPackage({ barcodes-sile, buildLuarocksPackage, couyards-sile, embedders-sile, fancytoc-sile, fetchgit, fetchurl, labelrefs-sile, lua, luaOlder, markdown-sile, piecharts-sile, printoptions-sile, ptable-sile, qrcode-sile, silex-sile, textsubsuper-sile }:
+buildLuarocksPackage {
+  pname = "resilient.sile";
+  version = "2.3.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/resilient.sile-2.3.0-1.rockspec";
+    sha256 = "0fzm9wy4hnb73l081b3r925qhlz97ipj08zhk517szf5pwlnqaii";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/resilient.sile.git",
+  "rev": "4ad11bec2c39ad303cc8c84d3a553c5a66bc3a2f",
+  "date": "2024-03-17T23:21:42+01:00",
+  "path": "/nix/store/7fd9yxd7ziqwazjbznwni134fffd5rcq-resilient.sile",
+  "sha256": "0bjgj7dqzid0fph9jmkbd7f9n76z50m0gqlbj7zjd60ggs18pwp6",
+  "hash": "sha256-5vKLgn4PmCb/kYviByoo3xyb3GlrVpngdaDFj9uRTy4=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ barcodes-sile couyards-sile embedders-sile fancytoc-sile labelrefs-sile lua markdown-sile piecharts-sile printoptions-sile ptable-sile qrcode-sile silex-sile textsubsuper-sile ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/resilient.sile";
+    description = "Advanced book classes and tools for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
     license.fullName = "MIT";
   };
 }) {};
@@ -3378,6 +3741,72 @@ buildLuarocksPackage {
   };
 }) {};
 
+silex-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "silex.sile";
+  version = "0.5.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/silex.sile-0.5.0-1.rockspec";
+    sha256 = "1i12nm6cy00y8lxxg1hxhrz9fz19pcl697nza1mqssj443a70hrl";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/silex.sile.git",
+  "rev": "a66d89c03258c97b51e212be716c75512473601b",
+  "date": "2024-02-29T02:23:15+01:00",
+  "path": "/nix/store/kfcrd7s4bn5d9gvshp47cflb81jfr724-silex.sile",
+  "sha256": "19svazzlagqnvzqwl9jsvayx8c8dxmd9qjzp8nwznbw5jqzqicz1",
+  "hash": "sha256-4bOIP5aFL/u5RfdLnFrtDTHUvdpaJsrx3xY/Rf9XW6c=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/silex.sile";
+    description = "Extension layer for SILE and resilient";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
+smartquotes-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder, silex-sile }:
+buildLuarocksPackage {
+  pname = "smartquotes.sile";
+  version = "1.0.0-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/smartquotes.sile-1.0.0-1.rockspec";
+    sha256 = "0gvfg89m7gr4925973r4dj8ayql3jqgn5irlkvjlm1snhd6j1spx";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/smartquotes.sile.git",
+  "rev": "8c799c9a862f2422ec8960817ea5c79ad193ac37",
+  "date": "2023-08-05T18:01:42+02:00",
+  "path": "/nix/store/6q8ggdymj7wgd6vd2xxfc5qaglqb1jhg-smartquotes.sile",
+  "sha256": "1ziqvgh2llh7nr9nkirkznyvn9px8br02y07d8xbzkyg1rz98qc3",
+  "hash": "sha256-g2GUfg7Pz786agd4AfJC/Sa7vf0zx2lTtgdSKuDbOP4=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua silex-sile ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/smartquotes.sile";
+    description = "Typographic quotation marks with the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
+    license.fullName = "MIT";
+  };
+}) {};
+
 sqlite = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, luv }:
 buildLuarocksPackage {
   pname = "sqlite";
@@ -3567,6 +3996,39 @@ buildLuarocksPackage {
   meta = {
     homepage = "https://github.com/nvim-telescope/telescope.nvim";
     description = "Find, Filter, Preview, Pick. All lua, all the time.";
+    license.fullName = "MIT";
+  };
+}) {};
+
+textsubsuper-sile = callPackage({ buildLuarocksPackage, fetchgit, fetchurl, lua, luaOlder }:
+buildLuarocksPackage {
+  pname = "textsubsuper.sile";
+  version = "1.1.1-1";
+  knownRockspec = (fetchurl {
+    url    = "mirror://luarocks/textsubsuper.sile-1.1.1-1.rockspec";
+    sha256 = "1scywlpj2cg9fga19gmj3n0vvqjjlbhajmyhrhkwfbgnkv8l68wi";
+  }).outPath;
+  src = fetchgit ( removeAttrs (builtins.fromJSON ''{
+  "url": "https://github.com/Omikhleia/textsubsuper.sile.git",
+  "rev": "499f025c67af4cb235fdff707a4fd52bc3a01ee6",
+  "date": "2023-12-13T09:56:29+01:00",
+  "path": "/nix/store/gpc3a172y1zq1dhv4pp5v7ch42w34x3j-textsubsuper.sile",
+  "sha256": "12790m1z3mg5agl744v68cjcqbwlxnrq09hsm3a6bp732p8wzbv7",
+  "hash": "sha256-Z6/P0RXj3GXUqBomgLPtlC/MJENmE3LoU+XV8UMF6Yg=",
+  "fetchLFS": false,
+  "fetchSubmodules": true,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+ '') ["date" "path" "sha256"]) ;
+
+  disabled = (luaOlder "5.1");
+  propagatedBuildInputs = [ lua ];
+
+  meta = {
+    homepage = "https://github.com/Omikhleia/textsubsuper.sile";
+    description = "Real or fake superscripts and subscripts for the SILE typesetting system.";
+    maintainers = with lib.maintainers; [ cdro ];
     license.fullName = "MIT";
   };
 }) {};
