@@ -3396,6 +3396,16 @@
     github = "cdombroski";
     githubId = 244909;
   };
+  cdro = {
+    name = "Cezary Drożak";
+    email = "cezary@drozak.net";
+    matrix = "@nawordar:matrix.org";
+    github = "nawordar";
+    githubId = 26769700;
+    keys = [{
+      fingerprint = "2E28 E13E 2CB3 F21D 9499  0E35 E29A 5ED4 0E7D 7748";
+    }];
+  };
   ceedubs = {
     email = "ceedubs@gmail.com";
     github = "ceedubs";
